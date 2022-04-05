@@ -1,8 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
+
+
 
 function Form(props){
+
+  function handleSubmit(e){
+    e.preventDefault();
+    props.addTask("Error al Enviar Formulario");
+  }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
         <h2 className="label-wrapper">
           <label htmlFor="new-todo-input" className="label__lg">
             What needs to be done?
